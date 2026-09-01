@@ -1,0 +1,55 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Prepare www + Capacitor
+        run: |
+          mkdir -p www
+          cp -f index.html login.html signup.html chat.html library.html projects.html plugins.html profile.html settings.html pricing.html terms.html tools.html ultimate.html www/ 2>/dev/null || true
+          cp -rf assets www/
+          npm init -y
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+          cat > capacitor.config.json << 'JSON'
+          {
+            "appId": "com.cynextra.ai",
+            "appName": "CynExtra-AI",
+            "webDir": "www",
+            "server": { "androidScheme": "https" }
+          }
+          JSON
+          npx cap add android
+          npx cap sync android
+
+      - name: Build Debug APK
+        working-directory: android
+        run: chmod +x gradlew && ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CynExtra-AI-debug
+          path: android/app/build/outputs/apk/debug/app-debug.apk
