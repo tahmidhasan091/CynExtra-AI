@@ -9,40 +9,115 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v3
 
-      - name: Prepare www + Capacitor
+      - name: Accept Android licenses
+        run: yes | sdkmanager --licenses || true
+
+      - name: Install Pillow
+        run: pip3 install pillow
+
+      - name: Prepare Capacitor project and icons
         run: |
+          set -e
+          rm -rf www android
           mkdir -p www
-          cp -f index.html login.html signup.html chat.html library.html projects.html plugins.html profile.html settings.html pricing.html terms.html tools.html ultimate.html www/ 2>/dev/null || true
+          for f in index.html login.html signup.html chat.html library.html projects.html plugins.html profile.html settings.html pricing.html terms.html tools.html ultimate.html; do
+            [ -f "$f" ] && cp -f "$f" www/
+          done
           cp -rf assets www/
-          npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
-          cat > capacitor.config.json << 'JSON'
-          {
-            "appId": "com.cynextra.ai",
-            "appName": "CynExtra-AI",
-            "webDir": "www",
-            "server": { "androidScheme": "https" }
-          }
-          JSON
+
+          printf '%s\n' '{' '  "name": "cynextra-ai",' '  "version": "1.0.0",' '  "private": true' '}' > package.json
+
+          printf '%s\n' '{' '  "appId": "com.cynextra.ai",' '  "appName": "CynExtra-AI",' '  "webDir": "www",' '  "server": {' '    "androidScheme": "https"' '  }' '}' > capacitor.config.json
+
+          npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
           npx cap add android
           npx cap sync android
+
+          python3 << 'PY'
+          from PIL import Image, ImageDraw
+          import os
+          logo = Image.open("assets/images/logo.png").convert("RGBA")
+          BG = (10, 14, 28, 255)
+          res = "android/app/src/main/res"
+
+          def trim(im, t=18):
+              px = im.load(); w, h = im.size
+              minx, miny, maxx, maxy = w, h, 0, 0; found = False
+              for y in range(h):
+                  for x in range(w):
+                      r, g, b, a = px[x, y]
+                      if a > 10 and (r > t or g > t or b > t):
+                          found = True
+                          minx, miny = min(minx, x), min(miny, y)
+                          maxx, maxy = max(maxx, x), max(maxy, y)
+              if not found: return im
+              p = 4
+              return im.crop((max(0, minx-p), max(0, miny-p), min(w, maxx+1+p), min(h, maxy+1+p)))
+
+          logo = trim(logo)
+
+          def square_icon(size, scale=0.72):
+              c = Image.new("RGBA", (size, size), BG)
+              t = int(size * scale); lw, lh = logo.size; s = t / max(lw, lh)
+              nw, nh = max(1, int(lw*s)), max(1, int(lh*s))
+              r = logo.resize((nw, nh), Image.Resampling.LANCZOS)
+              c.paste(r, ((size-nw)//2, (size-nh)//2), r)
+              return c
+
+          def round_icon(size):
+              img = square_icon(size)
+              m = Image.new("L", (size, size), 0)
+              ImageDraw.Draw(m).ellipse((0, 0, size-1, size-1), fill=255)
+              img.putalpha(m)
+              return img
+
+          def fg_icon(size, scale=0.55):
+              c = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+              t = int(size * scale); lw, lh = logo.size; s = t / max(lw, lh)
+              nw, nh = max(1, int(lw*s)), max(1, int(lh*s))
+              r = logo.resize((nw, nh), Image.Resampling.LANCZOS)
+              c.paste(r, ((size-nw)//2, (size-nh)//2), r)
+              return c
+
+          legacy = {"mipmap-mdpi": 48, "mipmap-hdpi": 72, "mipmap-xhdpi": 96, "mipmap-xxhdpi": 144, "mipmap-xxxhdpi": 192}
+          adaptive = {"mipmap-mdpi": 108, "mipmap-hdpi": 162, "mipmap-xhdpi": 216, "mipmap-xxhdpi": 324, "mipmap-xxxhdpi": 432}
+          for folder, size in legacy.items():
+              d = os.path.join(res, folder); os.makedirs(d, exist_ok=True)
+              square_icon(size).save(os.path.join(d, "ic_launcher.png"))
+              round_icon(size).save(os.path.join(d, "ic_launcher_round.png"))
+          for folder, size in adaptive.items():
+              d = os.path.join(res, folder); os.makedirs(d, exist_ok=True)
+              fg_icon(size).save(os.path.join(d, "ic_launcher_foreground.png"))
+          anydpi = os.path.join(res, "mipmap-anydpi-v26"); os.makedirs(anydpi, exist_ok=True)
+          xml = """<?xml version=\"1.0\" encoding=\"utf-8\"?>
+          <adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">
+              <background android:drawable=\"@color/ic_launcher_background\"/>
+              <foreground android:drawable=\"@mipmap/ic_launcher_foreground\"/>
+          </adaptive-icon>
+          """
+          for name in ("ic_launcher.xml", "ic_launcher_round.xml"):
+              open(os.path.join(anydpi, name), "w").write(xml)
+          values = os.path.join(res, "values"); os.makedirs(values, exist_ok=True)
+          open(os.path.join(values, "ic_launcher_background.xml"), "w").write("""<?xml version=\"1.0\" encoding=\"utf-8\"?>
+          <resources>
+              <color name=\"ic_launcher_background\">#0A0E1C</color>
+          </resources>
+          """)
+          print("icons OK")
+          PY
 
       - name: Build Debug APK
         working-directory: android
@@ -53,3 +128,4 @@ jobs:
         with:
           name: CynExtra-AI-debug
           path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
