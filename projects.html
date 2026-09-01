@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects — CynExtra-AI</title>
+<meta content="Manage your CynExtra-AI projects." name="description"/>
+<meta content="#0a0e1c" name="theme-color"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js"></script>
+</head>
+<body class="projects-page">
+<div class="workspace-shell">
+<!-- ==================================================
+             SIDEBAR
+             ================================================== -->
+<aside aria-label="CynExtra-AI navigation" class="workspace-sidebar" data-open="false" data-sidebar="">
+<div class="sidebar-inner">
+<header class="sidebar-header">
+<a aria-label="CynExtra-AI chat" class="sidebar-brand" data-nav-link="chat.html" href="chat.html">
+<img alt="CynExtra-AI logo" height="36" src="assets/images/logo.png" width="36"/>
+<span class="sidebar-brand-text">
+                            CynExtra-AI
+                        </span>
+</a>
+<button aria-label="Close sidebar" class="icon-button sidebar-close-button" data-action="close-sidebar" type="button">
+<span aria-hidden="true">
+                            ×
+                        </span>
+</button>
+</header>
+<nav aria-label="Main navigation" class="sidebar-navigation">
+<a class="sidebar-nav-item" data-nav-link="chat.html" href="chat.html">
+<span aria-hidden="true" class="nav-icon">
+                            ◇
+                        </span>
+<span class="nav-label">
+                            Chat
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="library.html" href="library.html">
+<span aria-hidden="true" class="nav-icon">
+                            ▣
+                        </span>
+<span class="nav-label">
+                            Library
+                        </span>
+</a>
+<a aria-current="page" class="sidebar-nav-item" data-nav-link="projects.html" href="projects.html">
+<span aria-hidden="true" class="nav-icon">
+                            ◫
+                        </span>
+<span class="nav-label">
+                            Projects
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="plugins.html" href="plugins.html">
+<span aria-hidden="true" class="nav-icon">
+                            ⊞
+                        </span>
+<span class="nav-label">
+                            Plugins
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="tools.html" href="tools.html">
+<span aria-hidden="true" class="nav-icon">
+                            ⚙
+                        </span>
+<span class="nav-label">
+                            Tools
+                        </span>
+</a>
+</nav>
+<section aria-labelledby="projects-mode-title" class="sidebar-section">
+<div class="sidebar-section-label" id="projects-mode-title">
+                        AI MODE
+                    </div>
+<div class="mode-card">
+<div class="mode-card-header">
+<span aria-hidden="true" class="mode-indicator"></span>
+<strong>
+                                ULTIMATE MODE
+                            </strong>
+</div>
+<p>
+                            Build and organize your AI-powered
+                            project workspace.
+                        </p>
+</div>
+</section>
+<div class="sidebar-bottom">
+<a class="sidebar-nav-item" data-nav-link="pricing.html" href="pricing.html">
+<span aria-hidden="true" class="nav-icon">
+                            +
+                        </span>
+<span class="nav-label">
+                            Get Plus
+                        </span>
+</a>
+<a aria-label="Open profile" class="sidebar-profile" data-nav-link="profile.html" href="profile.html">
+<span aria-hidden="true" class="profile-avatar">
+                            C
+                        </span>
+<span class="sidebar-profile-info">
+<span class="sidebar-profile-name" data-profile-name="">
+                                CynExtra User
+                            </span>
+<span class="sidebar-profile-email" data-profile-email="">
+                                Account
+                            </span>
+</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ==================================================
+             MAIN AREA
+             ================================================== -->
+<main class="workspace-main">
+<header aria-label="Projects toolbar" class="workspace-topbar">
+<div class="workspace-topbar-left">
+<button aria-expanded="false" aria-label="Open sidebar" class="icon-button" data-action="toggle-sidebar" type="button">
+<span aria-hidden="true" class="menu-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</button>
+<a aria-label="CynExtra-AI" class="workspace-brand" data-nav-link="chat.html" href="chat.html">
+<img alt="" height="32" src="assets/images/logo.png" width="32"/>
+<span class="workspace-brand-name">
+                            CynExtra-AI
+                        </span>
+</a>
+</div>
+<div class="workspace-topbar-actions">
+<a class="topbar-action" data-navigate="chat.html" href="chat.html">
+                        Back To Chat
+                    </a>
+<a class="topbar-action" data-navigate="library.html" href="library.html">
+                        Library
+                    </a>
+<a class="topbar-action primary-button" data-action="create-project" href="#">
+<span aria-hidden="true">
+                            +
+                        </span>
+
+                        New Project
+                    </a>
+</div>
+</header>
+<section aria-labelledby="projects-title" class="workspace-content">
+<header class="page-hero">
+<span class="section-eyebrow">
+                        BUILD &amp; CREATE
+                    </span>
+<h1 id="projects-title">
+                        Projects
+                    </h1>
+<p>
+                        Organize ideas, files, conversations and
+                        AI-assisted work into focused projects.
+                    </p>
+</header>
+<div class="projects-toolbar">
+<div>
+<h2 class="panel-title">
+                            Your projects
+                        </h2>
+<p class="content-card-description">
+                            Projects created in your workspace
+                            will appear here.
+                        </p>
+</div>
+<div aria-label="Project actions" class="project-actions">
+<button class="secondary-button" data-action="project-search" type="button">
+<span aria-hidden="true">
+                                ⌕
+                            </span>
+
+                            Search
+                        </button>
+<button class="secondary-button" data-action="project-filter" type="button">
+<span aria-hidden="true">
+                                ≡
+                            </span>
+
+                            Filter
+                        </button>
+<a class="primary-button" data-action="create-project" href="#">
+<span aria-hidden="true">
+                                +
+                            </span>
+
+                            Create Project
+                        </a>
+</div>
+</div>
+<div aria-label="CynExtra-AI projects" class="project-grid" data-project-grid="">
+<!-- Rendered by CynExtraApp.projectsPage.render() in assets/js/main.js
+                         from projects saved on this device (localStorage). -->
+</div>
+<!-- ==================================================
+                     PROJECT WORKFLOW INFORMATION
+                     ================================================== -->
+<section aria-labelledby="project-workflow-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                WORKFLOW
+                            </span>
+<h2 id="project-workflow-title">
+                                Build with CynExtra-AI
+                            </h2>
+<p>
+                                Keep your project process organized
+                                from the first idea to the final work.
+                            </p>
+</div>
+</div>
+<div class="content-grid">
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                01
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Plan
+                                </h3>
+<p class="content-card-description">
+                                    Start with a clear goal,
+                                    idea or problem you want
+                                    to work on.
+                                </p>
+</div>
+</article>
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                02
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Build
+                                </h3>
+<p class="content-card-description">
+                                    Use your conversations,
+                                    resources and available
+                                    workspace tools.
+                                </p>
+</div>
+</article>
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                03
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Organize
+                                </h3>
+<p class="content-card-description">
+                                    Keep related files,
+                                    conversations and resources
+                                    connected.
+                                </p>
+</div>
+</article>
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                04
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Continue
+                                </h3>
+<p class="content-card-description">
+                                    Return to your workspace
+                                    whenever you are ready to
+                                    continue.
+                                </p>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================================================
+                     PROJECT RESOURCES
+                     ================================================== -->
+<section aria-labelledby="project-resources-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                RESOURCES
+                            </span>
+<h2 id="project-resources-title">
+                                Project resources
+                            </h2>
+<p>
+                                Connect your project with the
+                                resources you need to continue
+                                your work.
+                            </p>
+</div>
+<a class="text-link" data-navigate="library.html" href="library.html">
+                            Open Library
+                            <span aria-hidden="true">
+                                →
+                            </span>
+</a>
+</div>
+<div class="content-grid">
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                ◇
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Conversations
+                                </h3>
+<p class="content-card-description">
+                                    Continue project-related
+                                    conversations from your
+                                    CynExtra-AI workspace.
+                                </p>
+<a class="text-link" data-navigate="chat.html" href="chat.html">
+                                    Open Chat
+                                    <span aria-hidden="true">
+                                        →
+                                    </span>
+</a>
+</div>
+</article>
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                □
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Files
+                                </h3>
+<p class="content-card-description">
+                                    Keep project files and useful
+                                    resources organized in your
+                                    Library.
+                                </p>
+<a class="text-link" data-navigate="library.html" href="library.html">
+                                    Open Library
+                                    <span aria-hidden="true">
+                                        →
+                                    </span>
+</a>
+</div>
+</article>
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                ⊞
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Plugins
+                                </h3>
+<p class="content-card-description">
+                                    Explore plugins that may be
+                                    available for your workspace.
+                                </p>
+<a class="text-link" data-navigate="plugins.html" href="plugins.html">
+                                    Explore Plugins
+                                    <span aria-hidden="true">
+                                        →
+                                    </span>
+</a>
+</div>
+</article>
+<article class="content-card">
+<div aria-hidden="true" class="content-card-icon">
+                                ⚙
+                            </div>
+<div class="content-card-body">
+<h3 class="content-card-title">
+                                    Tools
+                                </h3>
+<p class="content-card-description">
+                                    Access the workspace tools
+                                    area for available capabilities.
+                                </p>
+<a class="text-link" data-navigate="plugins.html" href="tools.html">
+                                    View Tools
+                                    <span aria-hidden="true">
+                                        →
+                                    </span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================================================
+                     ULTIMATE MODE
+                     ================================================== -->
+<section aria-labelledby="ultimate-project-title" class="content-card premium-card">
+<div aria-hidden="true" class="content-card-icon">
+                        ✦
+                    </div>
+<div class="content-card-body">
+<span class="section-eyebrow">
+                            ULTIMATE MODE
+                        </span>
+<h2 class="content-card-title" id="ultimate-project-title">
+                            Advanced project workspace
+                        </h2>
+<p class="content-card-description">
+                            CynExtra-AI can provide different
+                            workspace capabilities depending on
+                            your account, permissions and available
+                            tools.
+                        </p>
+<div aria-label="Project workspace areas" class="feature-list">
+<span class="feature-item">
+<span aria-hidden="true">✓</span>
+                                Project organization
+                            </span>
+<span class="feature-item">
+<span aria-hidden="true">✓</span>
+                                Memory preparation
+                            </span>
+<span class="feature-item">
+<span aria-hidden="true">✓</span>
+                                Voice preparation
+                            </span>
+<span class="feature-item">
+<span aria-hidden="true">✓</span>
+                                Tool preparation
+                            </span>
+<span class="feature-item">
+<span aria-hidden="true">✓</span>
+                                File workflow preparation
+                            </span>
+<span class="feature-item">
+<span aria-hidden="true">✓</span>
+                                Automation preparation
+                            </span>
+</div>
+<div class="content-card-actions">
+<a class="primary-button" data-navigate="pricing.html" href="pricing.html">
+                                View Plans
+                            </a>
+<a class="secondary-button" data-navigate="chat.html" href="chat.html">
+                                Open Chat
+                            </a>
+</div>
+</div>
+</section>
+<!-- ==================================================
+                     PROJECT NAVIGATION
+                     ================================================== -->
+<section aria-labelledby="project-next-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                CONTINUE
+                            </span>
+<h2 id="project-next-title">
+                                Continue working
+                            </h2>
+</div>
+</div>
+<div class="quick-actions">
+<a class="quick-action-card" data-navigate="chat.html" href="chat.html">
+<span aria-hidden="true" class="quick-action-icon">
+                                ◇
+                            </span>
+<span class="quick-action-content">
+<strong>
+                                    Chat
+                                </strong>
+<small>
+                                    Start or continue a conversation
+                                </small>
+</span>
+<span aria-hidden="true" class="quick-action-arrow">
+                                →
+                            </span>
+</a>
+<a class="quick-action-card" data-navigate="library.html" href="library.html">
+<span aria-hidden="true" class="quick-action-icon">
+                                ▣
+                            </span>
+<span class="quick-action-content">
+<strong>
+                                    Library
+                                </strong>
+<small>
+                                    Browse saved resources
+                                </small>
+</span>
+<span aria-hidden="true" class="quick-action-arrow">
+                                →
+                            </span>
+</a>
+<a class="quick-action-card" data-navigate="plugins.html" href="plugins.html">
+<span aria-hidden="true" class="quick-action-icon">
+                                ⊞
+                            </span>
+<span class="quick-action-content">
+<strong>
+                                    Plugins &amp; Tools
+                                </strong>
+<small>
+                                    Explore available workspace tools
+                                </small>
+</span>
+<span aria-hidden="true" class="quick-action-arrow">
+                                →
+                            </span>
+</a>
+</div>
+</section>
+<!-- ==================================================
+                     PROJECT FOOTER NAVIGATION
+                     ================================================== -->
+<footer aria-label="Project footer navigation" class="workspace-footer">
+<a data-navigate="chat.html" href="chat.html">
+                        Back To Chat
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="library.html" href="library.html">
+                        Library
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="plugins.html" href="plugins.html">
+                        Plugins
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="profile.html" href="profile.html">
+                        Profile
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="settings.html" href="settings.html">
+                        Settings
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="pricing.html" href="pricing.html">
+                        Plans
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="terms.html" href="terms.html">
+                        Terms
+                    </a>
+</footer>
+</section>
+</main>
+</div>
+<!-- ============================================================
+         MOBILE SIDEBAR OVERLAY
+         ============================================================ -->
+<button aria-hidden="true" aria-label="Close navigation" class="sidebar-overlay" data-action="close-sidebar" data-visible="false" tabindex="-1" type="button"></button>
+<!-- ============================================================
+         GLOBAL UI CONTAINERS
+         ============================================================ -->
+<div aria-hidden="true" class="modal-root"></div>
+<div aria-atomic="true" aria-live="polite" class="toast-container"></div>
+</body>
+</html>

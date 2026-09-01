@@ -1,0 +1,18 @@
+{
+  "name": "cynextra-ai-backend",
+  "version": "2.2.0",
+  "description": "CynExtra-AI Backend \u2014 intelligent AI workspace",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && find ai middleware routes services -type f -name \"*.js\" -print0 | xargs -0 -n1 node --check",
+    "test": "node tests/ultimate.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "cors": "^2.8.5"
+  }
+}

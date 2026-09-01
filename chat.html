@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" name="viewport"/>
+<title>Chat — CynExtra-AI</title>
+<meta content="CynExtra-AI intelligent workspace." name="description"/>
+<meta content="#0a0e1c" name="theme-color"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js"></script>
+</head>
+<body class="chat-page">
+<div class="workspace-shell">
+<!-- ==================================================
+             MAIN WORKSPACE SIDEBAR
+             ================================================== -->
+<aside aria-hidden="true" aria-label="CynExtra-AI navigation" class="workspace-sidebar" data-open="false" data-sidebar="" id="main-sidebar">
+<div class="sidebar-inner">
+<header class="sidebar-header">
+<a aria-label="CynExtra-AI chat" class="sidebar-brand" data-nav-link="chat.html" href="chat.html">
+<img alt="CynExtra-AI logo" height="36" src="assets/images/logo.png" width="36"/>
+<span class="sidebar-brand-text">
+                            CynExtra-AI
+                        </span>
+</a>
+<button aria-label="Close sidebar" class="icon-button sidebar-close-button" data-action="close-sidebar" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</header>
+<!-- Main navigation -->
+<nav aria-label="Main navigation" class="sidebar-navigation">
+<a class="sidebar-nav-item" data-nav-link="chat.html" href="chat.html">
+<span aria-hidden="true" class="nav-icon">
+                            ◇
+                        </span>
+<span>
+                            Chat
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="library.html" href="library.html">
+<span aria-hidden="true" class="nav-icon">
+                            ▣
+                        </span>
+<span>
+                            Library
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="projects.html" href="projects.html">
+<span aria-hidden="true" class="nav-icon">
+                            ◫
+                        </span>
+<span>
+                            Projects
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="plugins.html" href="plugins.html">
+<span aria-hidden="true" class="nav-icon">
+                            ⊞
+                        </span>
+<span>
+                            Plugins
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="tools.html" href="tools.html">
+<span aria-hidden="true" class="nav-icon">
+                            ⚙
+                        </span>
+<span>
+                            Tools
+                        </span>
+</a>
+</nav>
+<!-- Ultimate Mode -->
+<section aria-labelledby="ultimate-mode-title" class="sidebar-section">
+<div class="sidebar-section-label" id="ultimate-mode-title">
+                        CYNEXTRA ULTIMATE
+                    </div>
+<a class="mode-card ultimate-entry-card" data-nav-link="ultimate.html" href="ultimate.html" aria-label="Open CynExtra Ultimate Mode">
+<div class="mode-card-header">
+<span aria-hidden="true" class="mode-indicator"></span>
+<strong>
+                                ULTIMATE MODE
+                            </strong>
+</div>
+<p>
+                            Advanced workspace mode prepared
+                            for tools, memory, voice, agents,
+                            automation and project workflows.
+                        </p>
+</a>
+</section>
+<!-- Sidebar bottom -->
+<div class="sidebar-bottom">
+<a class="sidebar-nav-item" data-nav-link="pricing.html" href="pricing.html">
+<span aria-hidden="true" class="nav-icon">
+                            +
+                        </span>
+<span>
+                            Get Plus
+                        </span>
+</a>
+<a aria-label="Open profile" class="sidebar-profile" data-nav-link="profile.html" href="profile.html">
+<span aria-hidden="true" class="profile-avatar">
+                            C
+                        </span>
+<span class="sidebar-profile-info">
+<span class="sidebar-profile-name" data-profile-name="">
+                                CynExtra User
+                            </span>
+<span class="sidebar-profile-email" data-profile-email="">
+                                Account
+                            </span>
+</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ==================================================
+             MAIN AREA
+             ================================================== -->
+<main class="workspace-main" data-chat-view="">
+<!-- ==================================================
+                 TOP BAR
+                 ================================================== -->
+<header aria-label="Chat toolbar" class="workspace-topbar">
+<div class="workspace-topbar-left">
+<button aria-controls="main-sidebar" aria-expanded="false" aria-label="Open sidebar" class="icon-button" data-action="toggle-sidebar" type="button">
+<span aria-hidden="true" class="menu-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</button>
+<a aria-label="CynExtra-AI" class="workspace-brand" data-nav-link="chat.html" href="chat.html">
+<img alt="" height="32" src="assets/images/logo.png" width="32"/>
+<span class="workspace-brand-name">
+                            CynExtra-AI
+                        </span>
+</a>
+<div class="workspace-title-group">
+<span class="workspace-eyebrow">
+                            AI WORKSPACE
+                        </span>
+<span class="workspace-title">
+                            New conversation
+                        </span>
+</div>
+</div>
+<div class="workspace-topbar-actions">
+<a aria-label="View CynExtra-AI plans" class="topbar-action primary-button" data-navigate="pricing.html" href="pricing.html">
+<span aria-hidden="true">+</span>
+<span>
+                            Get Plus
+                        </span>
+</a>
+<button aria-controls="chat-more-menu" aria-expanded="false" aria-label="Open conversation options" class="topbar-action topbar-action-icon" data-action="toggle-more-menu" type="button">
+<span aria-hidden="true" class="cyn-dots-icon"><i></i><i></i><i></i></span>
+<span class="sr-only">
+                            More
+                        </span>
+</button>
+</div>
+<!-- More menu -->
+<div aria-hidden="true" class="topbar-menu" data-menu="" data-more-menu="" id="chat-more-menu">
+<button class="menu-item" data-topbar-action="share" type="button">
+<span aria-hidden="true">
+                            Share
+                        </span>
+<span>
+                            Share
+                        </span>
+</button>
+<button class="menu-item" data-topbar-action="copy-project" type="button">
+<span aria-hidden="true">
+                            Copy
+                        </span>
+<span>
+                            Copy Project
+                        </span>
+</button>
+<button class="menu-item" data-topbar-action="add-folder" type="button">
+<span aria-hidden="true">
+                            +
+                        </span>
+<span>
+                            Add to Folder
+                        </span>
+</button>
+<button class="menu-item" data-topbar-action="export-chat" type="button">
+<span aria-hidden="true">Export</span>
+<span>
+                            Export Chat
+                        </span>
+</button>
+</div>
+</header>
+<!-- ==================================================
+                 CHAT CONTENT
+                 ================================================== -->
+<section aria-label="CynExtra-AI conversation" class="chat-area">
+<div aria-label="Conversation messages" aria-live="polite" aria-relevant="additions" class="chat-messages" role="log">
+<div class="chat-message-list">
+<!-- ==================================================
+                             WELCOME MESSAGE
+                             ================================================== -->
+<article class="chat-message ai" data-chat-message="" data-message-role="assistant">
+<div class="message-inner">
+<div aria-hidden="true" class="message-avatar">
+<img alt="" height="32" src="assets/images/logo.png" width="32"/>
+</div>
+<div class="message-body">
+<div class="message-bubble">
+<div class="message-text" data-message-content="">
+<p>
+                                                Hello! I'm
+                                                <strong>
+                                                    CynExtra-AI
+                                                </strong>.
+                                            </p>
+<p>
+                                                Ask me anything,
+                                                work on an idea,
+                                                explore a project,
+                                                or start a new
+                                                conversation.
+                                            </p>
+</div>
+</div>
+<div aria-label="Assistant message actions" class="message-actions">
+<button aria-label="Copy message" class="message-action" data-message-action="copy" type="button">
+<span aria-hidden="true">
+                                                Copy
+                                            </span>
+<span>
+                                                Copy
+                                            </span>
+</button>
+<button aria-label="Like message" class="message-action" data-message-action="like" type="button">
+<span aria-hidden="true">Like</span>
+<span>
+                                                Like
+                                            </span>
+</button>
+<button aria-label="Dislike message" class="message-action" data-message-action="dislike" type="button">
+<span aria-hidden="true">Dislike</span>
+<span>
+                                                Dislike
+                                            </span>
+</button>
+<button aria-label="Read message aloud" class="message-action" data-message-action="read-aloud" type="button">
+<span aria-hidden="true">
+                                                Read Aloud
+                                            </span>
+<span>
+                                                Read Aloud
+                                            </span>
+</button>
+<button aria-label="Share message" class="message-action" data-message-action="share" type="button">
+<span aria-hidden="true">
+                                                Share
+                                            </span>
+<span>
+                                                Share
+                                            </span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- ==================================================
+                     THINKING INDICATOR
+                     ================================================== -->
+<div aria-hidden="true" aria-live="polite" class="thinking-indicator" data-thinking-indicator="" hidden="">
+<span aria-hidden="true" class="thinking-indicator-dot"></span>
+<span>
+                        CynExtra-AI is thinking...
+                    </span>
+</div>
+<!-- ==================================================
+                     CHAT COMPOSER
+                     ================================================== -->
+<section aria-label="Message composer" class="chat-composer">
+<div class="chat-composer-inner">
+<form action="#" class="chat-form" data-chat-form="" method="post">
+<div aria-label="Selected attachments" aria-live="polite" class="chat-attachment-tray" data-attachment-tray="" hidden="">
+<div class="chat-attachment-tray-header">
+<span>Attachments</span>
+<span data-attachment-status="" role="status"></span>
+</div>
+<div class="chat-attachment-list" data-attachment-list=""></div>
+</div>
+<div class="chat-input-shell">
+<!-- Plus button -->
+<button aria-controls="chat-plus-menu" aria-expanded="false" aria-label="Open attachment and tool menu" class="chat-plus-button" data-action="toggle-plus-menu" type="button">
+<span aria-hidden="true">
+                                        +
+                                    </span>
+</button>
+<!-- Model selector -->
+<button aria-controls="chat-model-menu" aria-expanded="false" aria-label="Choose AI model" class="chat-model-button" data-action="toggle-model-menu" type="button">
+<span data-current-model-name="">Select model</span>
+</button>
+<div aria-hidden="true" class="model-menu composer-model-menu" data-menu="" data-model-menu="" id="chat-model-menu">
+<div class="model-menu-title">Available models</div>
+<div data-model-list=""></div>
+<div class="model-menu-status" data-model-status="" role="status"></div>
+</div>
+<!-- Message input -->
+<div class="chat-input-wrapper">
+<label class="sr-only" for="chat-message-input">
+                                        Message CynExtra-AI
+                                    </label>
+<textarea aria-label="Ask CynExtra" autocomplete="off" class="chat-input" data-chat-input="" id="chat-message-input" maxlength="12000" name="message" placeholder="Ask CynExtra" rows="1" spellcheck="true"></textarea>
+</div>
+<!-- Send button -->
+<button aria-label="Send message" class="chat-send-button" type="submit">
+<span aria-hidden="true" class="send-icon"></span>
+</button>
+</div>
+<!-- ==================================================
+                                 PLUS MENU
+                                 ================================================== -->
+<div aria-hidden="true" class="plus-menu" data-menu="" data-plus-menu="" id="chat-plus-menu">
+<div class="plus-menu-title">Add to conversation</div>
+<div class="plus-menu-section-label">Input &amp; Files</div>
+<div class="plus-menu-grid">
+<button class="plus-menu-item" data-plus-action="camera" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/camera.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Camera</span>
+</button>
+<button class="plus-menu-item" data-plus-action="photo" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/photo.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Photos</span>
+</button>
+<button class="plus-menu-item" data-plus-action="file" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/file.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Files</span>
+</button>
+</div>
+<div class="plus-menu-section-label">AI Capabilities</div>
+<div class="plus-menu-grid">
+<button class="plus-menu-item" data-plus-action="web-search" data-toggle-state="webSearch" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/search.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Web Search</span>
+<span class="plus-menu-item-state" data-state-for="webSearch">Off</span>
+</button>
+<button class="plus-menu-item" data-plus-action="project" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/project.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Add to Project</span>
+</button>
+<button class="plus-menu-item" data-plus-action="think-harder" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/think.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Think Harder</span>
+</button>
+<button class="plus-menu-item" data-plus-action="plugin" type="button">
+<span aria-hidden="true" class="plus-menu-item-icon">
+<img alt="" height="28" src="assets/images/icons/plugin.png" width="28"/>
+</span>
+<span class="plus-menu-item-label">Plugins</span>
+</button>
+</div>
+</div>
+<!-- File inputs -->
+<input accept="image/*" aria-hidden="true" capture="environment" data-file-input="camera" hidden="" id="camera-file-input" type="file"/>
+<input accept="image/*" aria-hidden="true" data-file-input="photo" hidden="" id="photo-file-input" multiple="" type="file"/>
+<input accept=".txt,.csv,.md,.markdown,.html,.htm,.css,.js,.mjs,.cjs,.ts,.tsx,.jsx,.json,.xml,.yaml,.yml,.py,.java,.c,.h,.cpp,.cc,.hpp,.sql,.sh,.bash,.env,.log,.ini,.toml,.conf,.png,.jpg,.jpeg,.webp,.gif" aria-hidden="true" data-file-input="file" hidden="" id="general-file-input" multiple="" type="file"/>
+</form>
+<div aria-live="polite" class="chat-composer-status-row">
+<span data-voice-status="" hidden=""></span>
+<button aria-label="Use microphone" class="chat-voice-button" data-action="voice-input" type="button">Voice</button>
+</div>
+<p class="chat-composer-hint">
+                            CynExtra-AI can make mistakes. Check important information.
+                        </p>
+</div>
+</section>
+</section>
+</main>
+</div>
+<!-- ============================================================
+         ACCESSIBILITY / WORKSPACE STATUS
+         ============================================================ -->
+<div aria-atomic="true" aria-live="polite" class="workspace-status"></div>
+<!-- ============================================================
+         MOBILE SIDEBAR OVERLAY
+         ============================================================ -->
+<button aria-hidden="true" aria-label="Close navigation" class="sidebar-overlay" data-action="close-sidebar" data-visible="false" tabindex="-1" type="button"></button>
+<!-- ============================================================
+         HIDDEN STATE / FUTURE-READY UI CONTAINERS
+         ============================================================ -->
+<div aria-hidden="true" class="modal-root"></div>
+<div aria-atomic="true" aria-live="polite" class="toast-container"></div>
+<!-- ============================================================
+         PAGE FOOTER
+         ============================================================ -->
+<footer aria-label="CynExtra-AI information" class="workspace-footer">
+<span>
+            CynExtra-AI
+        </span>
+<span aria-hidden="true">
+            ·
+        </span>
+<a href="terms.html">
+            Terms
+        </a>
+<span aria-hidden="true">
+            ·
+        </span>
+<a href="pricing.html">
+            Plans
+        </a>
+</footer>
+</body>
+</html>

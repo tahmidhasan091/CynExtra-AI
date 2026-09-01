@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings — CynExtra-AI</title>
+<meta content="Manage your CynExtra-AI workspace settings." name="description"/>
+<meta content="#0a0e1c" name="theme-color"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js"></script>
+</head>
+<body class="settings-page">
+<div class="workspace-shell">
+<!-- ==================================================
+             SIDEBAR
+             ================================================== -->
+<aside aria-label="CynExtra-AI navigation" class="workspace-sidebar" data-open="false" data-sidebar="">
+<div class="sidebar-inner">
+<header class="sidebar-header">
+<a aria-label="CynExtra-AI chat" class="sidebar-brand" data-nav-link="chat.html" href="chat.html">
+<img alt="CynExtra-AI logo" height="36" src="assets/images/logo.png" width="36"/>
+<span class="sidebar-brand-text">
+                            CynExtra-AI
+                        </span>
+</a>
+<button aria-label="Close sidebar" class="icon-button sidebar-close-button" data-action="close-sidebar" type="button">
+<span aria-hidden="true">
+                            ×
+                        </span>
+</button>
+</header>
+<nav aria-label="Main navigation" class="sidebar-navigation">
+<a class="sidebar-nav-item" data-nav-link="chat.html" href="chat.html">
+<span aria-hidden="true" class="nav-icon">
+                            ◇
+                        </span>
+<span class="nav-label">
+                            Chat
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="library.html" href="library.html">
+<span aria-hidden="true" class="nav-icon">
+                            ▣
+                        </span>
+<span class="nav-label">
+                            Library
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="projects.html" href="projects.html">
+<span aria-hidden="true" class="nav-icon">
+                            ◫
+                        </span>
+<span class="nav-label">
+                            Projects
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="plugins.html" href="plugins.html">
+<span aria-hidden="true" class="nav-icon">
+                            ⊞
+                        </span>
+<span class="nav-label">
+                            Plugins
+                        </span>
+</a>
+<a class="sidebar-nav-item" data-nav-link="tools.html" href="tools.html">
+<span aria-hidden="true" class="nav-icon">
+                            ⚙
+                        </span>
+<span class="nav-label">
+                            Tools
+                        </span>
+</a>
+</nav>
+<section aria-labelledby="settings-mode-title" class="sidebar-section">
+<div class="sidebar-section-label" id="settings-mode-title">
+                        AI MODE
+                    </div>
+<a class="mode-card ultimate-entry-card" href="ultimate.html" aria-label="Open CynExtra Ultimate Mode">
+<div class="mode-card-header">
+<span aria-hidden="true" class="mode-indicator"></span>
+<strong>
+                                ULTIMATE MODE
+                            </strong>
+</div>
+<p>
+                            Configure your CynExtra-AI workspace
+                            preferences.
+                        </p>
+</a>
+</section>
+<div class="sidebar-bottom">
+<a class="sidebar-nav-item" data-nav-link="pricing.html" href="pricing.html">
+<span aria-hidden="true" class="nav-icon">
+                            +
+                        </span>
+<span class="nav-label">
+                            Get Plus
+                        </span>
+</a>
+<a aria-label="Open profile" class="sidebar-profile" data-nav-link="profile.html" href="profile.html">
+<span aria-hidden="true" class="profile-avatar">
+                            C
+                        </span>
+<span class="sidebar-profile-info">
+<span class="sidebar-profile-name" data-profile-name="">
+                                CynExtra User
+                            </span>
+<span class="sidebar-profile-email" data-profile-email="">
+                                Account
+                            </span>
+</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ==================================================
+             MAIN AREA
+             ================================================== -->
+<main class="workspace-main">
+<header aria-label="Settings toolbar" class="workspace-topbar">
+<div class="workspace-topbar-left">
+<button aria-expanded="false" aria-label="Open sidebar" class="icon-button" data-action="toggle-sidebar" type="button">
+<span aria-hidden="true" class="menu-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</button>
+<a aria-label="CynExtra-AI" class="workspace-brand" data-nav-link="chat.html" href="chat.html">
+<img alt="" height="32" src="assets/images/logo.png" width="32"/>
+<span class="workspace-brand-name">
+                            CynExtra-AI
+                        </span>
+</a>
+</div>
+<div class="workspace-topbar-actions">
+<a class="topbar-action" data-navigate="chat.html" href="chat.html">
+                        Back To Chat
+                    </a>
+<a class="topbar-action" data-navigate="profile.html" href="profile.html">
+                        Profile
+                    </a>
+<a class="topbar-action primary-button" data-navigate="pricing.html" href="pricing.html">
+<span aria-hidden="true">
+                            +
+                        </span>
+
+                        Get Plus
+                    </a>
+</div>
+</header>
+<section aria-labelledby="settings-title" class="workspace-content">
+<header class="page-hero">
+<span class="section-eyebrow">
+                        PREFERENCES
+                    </span>
+<h1 id="settings-title">
+                        Settings
+                    </h1>
+<p>
+                        Customize your CynExtra-AI experience,
+                        appearance and AI preferences.
+                    </p>
+</header>
+<!-- ==================================================
+                     SETTINGS FORM
+                     ================================================== -->
+<form class="settings-form" data-settings-form="" novalidate="">
+<!-- ==================================================
+                         APPEARANCE
+                         ================================================== -->
+<section aria-labelledby="appearance-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                    APPEARANCE
+                                </span>
+<h2 id="appearance-title">
+                                    Appearance
+                                </h2>
+<p>
+                                    Choose how CynExtra-AI should
+                                    appear on your device.
+                                </p>
+</div>
+</div>
+<div class="settings-group">
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Dark Mode
+                                    </h3>
+<p>
+                                        Use a darker interface for
+                                        your workspace.
+                                    </p>
+</div>
+<label class="switch">
+<input aria-label="Enable Dark Mode" data-theme-option="dark" name="darkMode" type="checkbox" value="dark"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Theme
+                                    </h3>
+<p>
+                                        Select an available visual
+                                        theme for your workspace.
+                                    </p>
+</div>
+<div class="theme-selector">
+<button aria-pressed="false" class="theme-option" data-theme-option="default" type="button">
+                                        Premium
+                                    </button>
+<button aria-pressed="false" class="theme-option" data-theme-option="neon-blue" type="button">
+                                        Neon Blue
+                                    </button>
+<button aria-pressed="false" class="theme-option" data-theme-option="cyber-purple" type="button">
+                                        Cyber Purple
+                                    </button>
+<button aria-pressed="false" class="theme-option" data-theme-option="ocean-glass" type="button">
+                                        Ocean Glass
+                                    </button>
+</div>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Galaxy
+                                    </h3>
+<p>
+                                        A space-inspired theme option
+                                        prepared for supported plans.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="galaxy" type="button">
+                                    Galaxy
+                                </button>
+</div>
+</div>
+</section>
+<!-- ==================================================
+                         NOTIFICATIONS
+                         ================================================== -->
+<section aria-labelledby="notifications-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                    NOTIFICATIONS
+                                </span>
+<h2 id="notifications-title">
+                                    Notifications
+                                </h2>
+<p>
+                                    Control how CynExtra-AI communicates
+                                    important workspace information.
+                                </p>
+</div>
+</div>
+<div class="settings-group">
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Notifications
+                                    </h3>
+<p>
+                                        Allow available application
+                                        notifications.
+                                    </p>
+</div>
+<label class="switch">
+<input aria-label="Enable notifications" checked="" data-setting="notifications" name="notifications" type="checkbox" value="enabled"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Sound Notifications
+                                    </h3>
+<p>
+                                        Play available interface
+                                        notification sounds.
+                                    </p>
+</div>
+<label class="switch">
+<input aria-label="Enable notification sounds" data-setting="notification-sound" name="notificationSound" type="checkbox" value="enabled"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+</div>
+</section>
+<!-- ==================================================
+                         VOICE
+                         ================================================== -->
+<section aria-labelledby="voice-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                    VOICE
+                                </span>
+<h2 id="voice-title">
+                                    Voice
+                                </h2>
+<p>
+                                    Configure available browser-based
+                                    voice preferences.
+                                </p>
+</div>
+</div>
+<div class="settings-group">
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Read Aloud
+                                    </h3>
+<p>
+                                        Allow supported AI messages
+                                        to be read aloud using the
+                                        available speech system.
+                                    </p>
+</div>
+<label class="switch">
+<input aria-label="Enable read aloud" checked="" data-setting="voice" name="voice" type="checkbox" value="enabled"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Voice Preference
+                                    </h3>
+<p>
+                                        The available voice is
+                                        determined by the supported
+                                        speech capabilities of the
+                                        device and browser.
+                                    </p>
+</div>
+<select aria-label="Voice preference" data-setting="voice-preference" name="voicePreference">
+<option value="default">
+                                        Default
+                                    </option>
+<option value="system">
+                                        System Voice
+                                    </option>
+</select>
+</div>
+</div>
+</section>
+<!-- ==================================================
+                         AI PREFERENCES
+                         ================================================== -->
+<section aria-labelledby="ai-preferences-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                    AI
+                                </span>
+<h2 id="ai-preferences-title">
+                                    AI Preferences
+                                </h2>
+<p>
+                                    Configure preferences for how
+                                    your CynExtra-AI workspace should
+                                    behave when supported.
+                                </p>
+</div>
+</div>
+<div class="settings-group">
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Memory
+                                    </h3>
+<p>
+                                        Use available account memory
+                                        features when supported by
+                                        your workspace.
+                                    </p>
+</div>
+<label class="switch">
+<input aria-label="Enable memory" checked="" data-setting="memory" name="memory" type="checkbox" value="enabled"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        Think Harder
+                                    </h3>
+<p>
+                                        Make the preference available
+                                        for supported chat workflows.
+                                    </p>
+</div>
+<label class="switch">
+<input aria-label="Enable Think Harder preference" data-setting="think-harder" name="thinkHarder" type="checkbox" value="enabled"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>
+                                        ULTIMATE MODE
+                                    </h3>
+<p>
+                                        Advanced tools and workflows
+                                        remain subject to your plan,
+                                        permissions and available
+                                        services.
+                                    </p>
+</div>
+<a class="secondary-button" data-navigate="pricing.html" href="pricing.html">
+                                    View Plans
+                                </a>
+</div>
+</div>
+</section>
+<!-- ==================================================
+                         PLAN THEMES
+                         ================================================== -->
+<!-- ==================================================
+                         CYNEXTRA ULTIMATE
+                         ================================================== -->
+<section aria-labelledby="ultimate-settings-title" class="content-section ultimate-settings-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">ADVANCED</span>
+<h2 id="ultimate-settings-title">CynExtra Ultimate</h2>
+<p>
+                                    Advanced personal assistant controls.
+                                    Features marked Coming Soon are prepared for future backend connection.
+                                </p>
+</div>
+</div>
+<div class="ultimate-status-card">
+<div class="ultimate-status-left">
+<img alt="" height="40" src="assets/images/icons/ultimate.png" width="40"/>
+<div>
+<strong>Ultimate Mode</strong>
+<p data-ultimate-status-label="">Standard mode active</p>
+</div>
+</div>
+<label class="switch">
+<input aria-label="Enable CynExtra Ultimate" data-ultimate-toggle="" name="ultimateMode" type="checkbox"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="settings-group ultimate-settings-group">
+<div class="setting-row">
+<div class="setting-info">
+<h3>Advanced Reasoning</h3>
+<p>How deeply Ultimate should think before answering.</p>
+</div>
+<select class="setting-select" data-ultimate-reasoning="" name="ultimateReasoning">
+<option value="standard">Standard</option>
+<option value="deep">Deep</option>
+<option value="maximum">Maximum</option>
+</select>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>Tool Access</h3>
+<p>Control which tools Ultimate may use.</p>
+</div>
+<select class="setting-select" data-ultimate-tools="" name="ultimateTools">
+<option value="auto">Auto</option>
+<option value="safe">Safe tools only</option>
+<option value="off">No tools</option>
+</select>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>Conversation Memory</h3>
+<p>Remember context within the current chat.</p>
+</div>
+<label class="switch">
+<input checked="" data-ultimate-memory="" name="ultimateMemory" type="checkbox"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row">
+<div class="setting-info">
+<h3>Web Access</h3>
+<p>Allow Ultimate to request web search when needed.</p>
+</div>
+<label class="switch">
+<input data-ultimate-web="" name="ultimateWeb" type="checkbox"/>
+<span aria-hidden="true" class="switch-control"></span>
+</label>
+</div>
+<div class="setting-row is-coming-soon">
+<div class="setting-info">
+<h3>Agents</h3>
+<p>Multi-step agent workflows.</p>
+</div>
+<span class="coming-soon-badge">Coming Soon</span>
+</div>
+<div class="setting-row is-coming-soon">
+<div class="setting-info">
+<h3>Voice</h3>
+<p>Voice input and spoken replies.</p>
+</div>
+<span class="coming-soon-badge">Coming Soon</span>
+</div>
+<div class="setting-row is-coming-soon">
+<div class="setting-info">
+<h3>Automation</h3>
+<p>Scheduled and proactive workflows.</p>
+</div>
+<span class="coming-soon-badge">Coming Soon</span>
+</div>
+<div class="setting-row is-coming-soon">
+<div class="setting-info">
+<h3>Future Compute</h3>
+<p>Specialized computing services — not connected.</p>
+</div>
+<span class="coming-soon-badge">Not Connected</span>
+</div>
+</div>
+</section>
+<section aria-labelledby="plan-themes-title" class="content-section">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">
+                                    PLAN THEMES
+                                </span>
+<h2 id="plan-themes-title">
+                                    Available themes
+                                </h2>
+<p>
+                                    Theme availability can depend on
+                                    the plan associated with your
+                                    CynExtra-AI account.
+                                </p>
+</div>
+</div>
+<div aria-label="CynExtra-AI themes" class="theme-grid">
+<!-- FREE -->
+<article class="theme-card" data-plan="free">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview premium-theme-preview"></span>
+<span class="theme-plan-label">
+                                        FREE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Premium
+                                    </h3>
+<p>
+                                        The default premium
+                                        CynExtra-AI experience.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="default" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- FREE: SLATE -->
+<article class="theme-card" data-plan="free">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview slate-theme-preview"></span>
+<span class="theme-plan-label">
+                                        FREE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Slate
+                                    </h3>
+<p>
+                                        A calm, cool gray-blue
+                                        interface for everyday use.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="slate" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- FREE: FOREST -->
+<article class="theme-card" data-plan="free">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview forest-theme-preview"></span>
+<span class="theme-plan-label">
+                                        FREE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Forest
+                                    </h3>
+<p>
+                                        A fresh, natural green
+                                        accent theme.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="forest" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- PRO: NEON BLUE -->
+<article class="theme-card" data-plan="pro">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview neon-blue-theme-preview"></span>
+<span class="theme-plan-label">
+                                        PRO
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Neon Blue
+                                    </h3>
+<p>
+                                        A futuristic blue interface
+                                        for supported PRO accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="neon-blue" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- PRO: CYBER PURPLE -->
+<article class="theme-card" data-plan="pro">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview cyber-purple-theme-preview"></span>
+<span class="theme-plan-label">
+                                        PRO
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Cyber Purple
+                                    </h3>
+<p>
+                                        A vivid futuristic theme
+                                        prepared for PRO accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="cyber-purple" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- PRO: OCEAN GLASS -->
+<article class="theme-card" data-plan="pro">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview ocean-glass-theme-preview"></span>
+<span class="theme-plan-label">
+                                        PRO
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Ocean Glass
+                                    </h3>
+<p>
+                                        A glass-inspired ocean
+                                        interface for PRO accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="ocean-glass" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- PRO: SUNSET -->
+<article class="theme-card" data-plan="pro">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview sunset-theme-preview"></span>
+<span class="theme-plan-label">
+                                        PRO
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Sunset
+                                    </h3>
+<p>
+                                        A warm orange-to-pink glow
+                                        for supported PRO accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="sunset" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- PRO: ARCTIC -->
+<article class="theme-card" data-plan="pro">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview arctic-theme-preview"></span>
+<span class="theme-plan-label">
+                                        PRO
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Arctic
+                                    </h3>
+<p>
+                                        A crisp icy-cyan interface
+                                        for supported PRO accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="arctic" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- ULTIMATE: AURORA -->
+<article class="theme-card" data-plan="ultimate">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview aurora-theme-preview"></span>
+<span class="theme-plan-label">
+                                        ULTIMATE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Aurora
+                                    </h3>
+<p>
+                                        An advanced visual theme
+                                        for supported ULTIMATE
+                                        accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="aurora" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- ULTIMATE: GALAXY -->
+<article class="theme-card" data-plan="ultimate">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview galaxy-theme-preview"></span>
+<span class="theme-plan-label">
+                                        ULTIMATE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Galaxy
+                                    </h3>
+<p>
+                                        A space-inspired interface
+                                        prepared for ULTIMATE accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="galaxy" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- ULTIMATE: LUXURY DARK -->
+<article class="theme-card" data-plan="ultimate">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview luxury-dark-theme-preview"></span>
+<span class="theme-plan-label">
+                                        ULTIMATE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Luxury Dark
+                                    </h3>
+<p>
+                                        A refined dark interface
+                                        for supported ULTIMATE accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="luxury-dark" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- ULTIMATE: QUANTUM -->
+<article class="theme-card" data-plan="ultimate">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview quantum-theme-preview"></span>
+<span class="theme-plan-label">
+                                        ULTIMATE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Quantum
+                                    </h3>
+<p>
+                                        A futuristic quantum-inspired
+                                        interface for ULTIMATE accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="quantum" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- ULTIMATE: CRIMSON -->
+<article class="theme-card" data-plan="ultimate">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview crimson-theme-preview"></span>
+<span class="theme-plan-label">
+                                        ULTIMATE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Crimson
+                                    </h3>
+<p>
+                                        A bold deep-red interface
+                                        for ULTIMATE accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="crimson" type="button">
+                                    Use Theme
+                                </button>
+</article>
+<!-- ULTIMATE: OBSIDIAN GOLD -->
+<article class="theme-card" data-plan="ultimate">
+<div class="theme-card-header">
+<span aria-hidden="true" class="theme-preview obsidian-gold-theme-preview"></span>
+<span class="theme-plan-label">
+                                        ULTIMATE
+                                    </span>
+</div>
+<div class="theme-card-body">
+<h3>
+                                        Obsidian Gold
+                                    </h3>
+<p>
+                                        A luxurious black-and-gold
+                                        theme for ULTIMATE accounts.
+                                    </p>
+</div>
+<button aria-pressed="false" class="theme-option" data-theme-option="obsidian-gold" type="button">
+                                    Use Theme
+                                </button>
+</article>
+</div>
+</section>
+<!-- ==================================================
+                         SAVE STATUS
+                         ================================================== -->
+<div aria-atomic="true" aria-live="polite" class="form-status" data-settings-status=""></div>
+<!-- ==================================================
+                         SETTINGS ACTIONS
+                         ================================================== -->
+<div class="form-actions">
+<button class="primary-button" data-action="save-settings" type="submit">
+                            Save Settings
+                        </button>
+<button class="secondary-button" data-action="reset-settings" type="reset">
+                            Reset
+                        </button>
+</div>
+</form>
+<!-- ==================================================
+                     SETTINGS FOOTER NAVIGATION
+                     ================================================== -->
+<footer aria-label="Settings footer navigation" class="workspace-footer">
+<a data-navigate="chat.html" href="chat.html">
+                        Back To Chat
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="library.html" href="library.html">
+                        Library
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="projects.html" href="projects.html">
+                        Projects
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="plugins.html" href="plugins.html">
+                        Plugins
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="profile.html" href="profile.html">
+                        Profile
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="pricing.html" href="pricing.html">
+                        Plans
+                    </a>
+<span aria-hidden="true">
+                        ·
+                    </span>
+<a data-navigate="terms.html" href="terms.html">
+                        Terms
+                    </a>
+</footer>
+</section>
+<section aria-labelledby="password-security-title" class="settings-section security-settings">
+<div class="settings-section-header">
+<h2 id="password-security-title">Password security</h2>
+<p>Verify ownership of your email before changing your password.</p>
+</div>
+<form data-password-reset-form="">
+<div class="form-field">
+<label for="reset-email">Account email</label>
+<input autocomplete="email" id="reset-email" name="reset-email" required="" type="email"/>
+</div>
+<div class="form-field">
+<label for="reset-code">Verification code</label>
+<input autocomplete="one-time-code" id="reset-code" inputmode="numeric" maxlength="6" name="reset-code" pattern="\d{6}"/>
+</div>
+<div class="form-field">
+<label for="reset-password">New password</label>
+<input autocomplete="new-password" id="reset-password" minlength="8" name="reset-password" type="password"/>
+</div>
+<div class="settings-actions">
+<button class="secondary-button" data-action="send-password-code" type="button">Send verification code</button>
+<button class="primary-button" type="submit">Change password</button>
+</div>
+<p data-reset-status="" hidden="" role="status"></p>
+</form>
+</section>
+</main>
+</div>
+<!-- ============================================================
+         MOBILE SIDEBAR OVERLAY
+         ============================================================ -->
+<button aria-hidden="true" aria-label="Close navigation" class="sidebar-overlay" data-action="close-sidebar" data-visible="false" tabindex="-1" type="button"></button>
+<!-- ============================================================
+         GLOBAL UI CONTAINERS
+         ============================================================ -->
+<div aria-hidden="true" class="modal-root"></div>
+<div aria-atomic="true" aria-live="polite" class="toast-container"></div>
+</body>
+</html>

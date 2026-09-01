@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login — CynExtra-AI</title>
+<meta content="Sign in to your CynExtra-AI workspace." name="description"/>
+<meta content="#0a0e1c" name="theme-color"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js"></script>
+</head>
+<body class="auth-page">
+<main aria-labelledby="login-title" class="auth-shell">
+<section aria-label="CynExtra-AI introduction" class="auth-brand-panel">
+<a aria-label="CynExtra-AI home" class="auth-brand" href="index.html">
+<img alt="CynExtra-AI logo" height="48" src="assets/images/logo.png" width="48"/>
+<span class="auth-brand-name">
+                    CynExtra-AI
+                </span>
+</a>
+<div class="auth-brand-content">
+<h1>
+                    Welcome back.
+                </h1>
+<p>
+                    Sign in to continue to your intelligent
+                    AI workspace and keep working with your
+                    conversations, projects, library and tools.
+                </p>
+</div>
+<div aria-label="CynExtra-AI features" class="auth-brand-badges">
+<span class="auth-brand-badge">
+                    Intelligent
+                </span>
+<span class="auth-brand-badge">
+                    Adaptable
+                </span>
+<span class="auth-brand-badge">
+                    Private
+                </span>
+<span class="auth-brand-badge">
+                    Creative
+                </span>
+</div>
+</section>
+<section aria-label="Login form" class="auth-form-panel">
+<div class="auth-form-wrapper">
+<header class="auth-header">
+<a aria-label="Back to CynExtra-AI home" class="auth-link" href="index.html">
+                        ← Back to CynExtra-AI
+                    </a>
+<h1 id="login-title">
+                        Sign in
+                    </h1>
+<p>
+                        Enter your account details to continue.
+                    </p>
+</header>
+<form action="#" class="auth-form" data-login-form="" method="post" novalidate="">
+<div class="form-group">
+<label class="form-label" for="login-identity">
+                            Email
+                        </label>
+<input aria-required="true" autocomplete="username" class="form-input" id="login-identity" name="identity" placeholder="Enter your email address" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="login-password">
+                            Password
+                        </label>
+<div class="password-field">
+<input aria-required="true" autocomplete="current-password" class="form-input" id="login-password" name="password" placeholder="Enter your password" required="" type="password"/>
+<button aria-controls="login-password" aria-label="Show password" aria-pressed="false" class="password-toggle" data-password-toggle="#login-password" type="button">
+<span aria-hidden="true">Show</span>
+</button>
+</div>
+</div>
+<div class="auth-form-actions">
+<a aria-label="Forgot your password" class="auth-link" href="#forgot-password">
+                            Forgot password?
+                        </a>
+</div>
+<div class="auth-form-actions">
+<button class="auth-submit" type="submit">
+<span>
+                                Sign in
+                            </span>
+</button>
+</div>
+</form>
+<div aria-hidden="true" class="auth-divider">
+<span>or</span>
+</div>
+<p class="auth-switch">
+                    Don't have an account?
+
+                    <a class="auth-link" href="signup.html">
+                        Create an account
+                    </a>
+</p>
+<p class="auth-legal" id="forgot-password">
+                    By continuing, you agree to use CynExtra-AI
+                    responsibly and in accordance with its terms.
+                </p>
+</div>
+</section>
+<section aria-labelledby="password-recovery-title" class="auth-card password-recovery-card">
+<h2 id="password-recovery-title">Forgot password?</h2>
+<p>Verify your email with a one-time code, then set a new password.</p>
+<form data-password-reset-form="">
+<div class="form-field">
+<label for="login-reset-email">Account email</label>
+<input autocomplete="email" id="login-reset-email" name="reset-email" required="" type="email"/>
+</div>
+<div class="form-field">
+<label for="login-reset-code">Verification code</label>
+<input autocomplete="one-time-code" id="login-reset-code" inputmode="numeric" maxlength="6" name="reset-code"/>
+</div>
+<div class="form-field">
+<label for="login-reset-password">New password</label>
+<input autocomplete="new-password" id="login-reset-password" minlength="8" name="reset-password" type="password"/>
+</div>
+<div class="settings-actions">
+<button class="secondary-button" data-action="send-password-code" type="button">Send code</button>
+<button class="primary-button" type="submit">Change password</button>
+</div>
+<p data-reset-status="" hidden="" role="status"></p>
+</form>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-13T15:00:00.000Z",
+  "entries": [
+    {
+      "id": "about-cynextra",
+      "title": "About CynExtra-AI",
+      "content": "CynExtra-AI is an intelligent AI workspace for chat, projects, tools, and creative work. It supports multiple models (Nova, Swift, Core, Think, Code, Vision, Max), conversation memory, and optional website search.",
+      "tags": [
+        "about",
+        "product"
+      ]
+    },
+    {
+      "id": "models",
+      "title": "CynExtra Model Family",
+      "content": "CynExtra Swift is the free fast model. CynExtra Nova is available on Pro. CynExtra Core, Think, Code and Max are Ultimate-plan model profiles. Each profile must map to a real configured provider model; this development build may map multiple profiles to the same provider model. Vision is unavailable until a real vision-capable provider is configured.",
+      "tags": [
+        "models",
+        "product"
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Safety principles",
+      "content": "CynExtra-AI should be used responsibly. Do not request illegal or harmful activities. Verify important AI-generated information before relying on it.",
+      "tags": [
+        "safety",
+        "policy"
+      ]
+    }
+  ]
+}
