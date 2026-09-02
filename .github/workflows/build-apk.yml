@@ -28,7 +28,7 @@ jobs:
       - name: Install Pillow
         run: pip3 install pillow
 
-      - name: Prepare Capacitor + CynExtra logo (icon + splash)
+      - name: Prepare Capacitor + logo + splash + cleartext
         run: |
           set -e
           rm -rf www android
@@ -45,7 +45,7 @@ jobs:
             "appId": "com.cynextra.ai",
             "appName": "CynExtra-AI",
             "webDir": "www",
-            "server": { "androidScheme": "https" },
+            "server": { "androidScheme": "https", "cleartext": true },
             "plugins": {
               "SplashScreen": {
                 "launchShowDuration": 2500,
@@ -65,12 +65,38 @@ jobs:
           npx cap add android
           npx cap sync android
 
+          # ----- Cleartext HTTP (localhost backend) -----
+          MANIFEST="android/app/src/main/AndroidManifest.xml"
+          if [ -f "$MANIFEST" ]; then
+            sed -i 's/android:usesCleartextTraffic="false"/android:usesCleartextTraffic="true"/g' "$MANIFEST"
+            grep -q 'usesCleartextTraffic' "$MANIFEST" \
+              || sed -i 's/<application /<application android:usesCleartextTraffic="true" /' "$MANIFEST"
+          fi
+
+          mkdir -p android/app/src/main/res/xml
+          cat > android/app/src/main/res/xml/network_security_config.xml << 'XML'
+          <?xml version="1.0" encoding="utf-8"?>
+          <network-security-config>
+            <base-config cleartextTrafficPermitted="true" />
+            <domain-config cleartextTrafficPermitted="true">
+              <domain includeSubdomains="true">localhost</domain>
+              <domain includeSubdomains="true">127.0.0.1</domain>
+            </domain-config>
+          </network-security-config>
+          XML
+
+          if [ -f "$MANIFEST" ]; then
+            grep -q 'networkSecurityConfig' "$MANIFEST" \
+              || sed -i 's/<application /<application android:networkSecurityConfig="@xml\/network_security_config" /' "$MANIFEST"
+          fi
+
+          # ----- Icons + native splash from logo.png -----
           python3 << 'PY'
           from PIL import Image, ImageDraw
           import os, glob
 
           logo = Image.open("assets/images/logo.png").convert("RGBA")
-          BG = (10, 14, 28, 255)  # #0a0e1c
+          BG = (10, 14, 28, 255)
           res = "android/app/src/main/res"
 
           def trim(im, t=18):
@@ -117,8 +143,7 @@ jobs:
               c.paste(r, ((size - nw) // 2, (size - nh) // 2), r)
               return c
 
-          def splash_image(w, h, logo_scale=0.28):
-              # Full-screen splash: dark bg + centered CX logo
+          def splash_image(w, h, logo_scale=0.32):
               c = Image.new("RGBA", (w, h), BG)
               t = int(min(w, h) * logo_scale)
               lw, lh = logo.size
@@ -128,21 +153,17 @@ jobs:
               c.paste(r, ((w - nw) // 2, (h - nh) // 2), r)
               return c
 
-          # --- Launcher icons ---
           legacy = {"mipmap-mdpi": 48, "mipmap-hdpi": 72, "mipmap-xhdpi": 96, "mipmap-xxhdpi": 144, "mipmap-xxxhdpi": 192}
           adaptive = {"mipmap-mdpi": 108, "mipmap-hdpi": 162, "mipmap-xhdpi": 216, "mipmap-xxhdpi": 324, "mipmap-xxxhdpi": 432}
           for folder, size in legacy.items():
-              d = os.path.join(res, folder)
-              os.makedirs(d, exist_ok=True)
+              d = os.path.join(res, folder); os.makedirs(d, exist_ok=True)
               square_icon(size).save(os.path.join(d, "ic_launcher.png"))
               round_icon(size).save(os.path.join(d, "ic_launcher_round.png"))
           for folder, size in adaptive.items():
-              d = os.path.join(res, folder)
-              os.makedirs(d, exist_ok=True)
+              d = os.path.join(res, folder); os.makedirs(d, exist_ok=True)
               fg_icon(size).save(os.path.join(d, "ic_launcher_foreground.png"))
 
-          anydpi = os.path.join(res, "mipmap-anydpi-v26")
-          os.makedirs(anydpi, exist_ok=True)
+          anydpi = os.path.join(res, "mipmap-anydpi-v26"); os.makedirs(anydpi, exist_ok=True)
           xml = """<?xml version="1.0" encoding="utf-8"?>
           <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
               <background android:drawable="@color/ic_launcher_background"/>
@@ -151,9 +172,7 @@ jobs:
           """
           for name in ("ic_launcher.xml", "ic_launcher_round.xml"):
               open(os.path.join(anydpi, name), "w").write(xml)
-
-          values = os.path.join(res, "values")
-          os.makedirs(values, exist_ok=True)
+          values = os.path.join(res, "values"); os.makedirs(values, exist_ok=True)
           open(os.path.join(values, "ic_launcher_background.xml"), "w").write(
               """<?xml version="1.0" encoding="utf-8"?>
           <resources>
@@ -162,60 +181,31 @@ jobs:
           """
           )
 
-          # --- Native splash (replace Capacitor default X) ---
-          # Common Capacitor locations
-          splash_dirs = [
-              os.path.join(res, "drawable"),
-              os.path.join(res, "drawable-port"),
-              os.path.join(res, "drawable-land"),
-              os.path.join(res, "drawable-hdpi"),
-              os.path.join(res, "drawable-mdpi"),
-              os.path.join(res, "drawable-xhdpi"),
-              os.path.join(res, "drawable-xxhdpi"),
-              os.path.join(res, "drawable-xxxhdpi"),
-          ]
-          for d in splash_dirs:
-              os.makedirs(d, exist_ok=True)
+          for d in ["drawable", "drawable-port", "drawable-land", "drawable-mdpi", "drawable-hdpi", "drawable-xhdpi", "drawable-xxhdpi", "drawable-xxxhdpi"]:
+              os.makedirs(os.path.join(res, d), exist_ok=True)
 
-          # Main splash resource used by Capacitor
-          splash = splash_image(1080, 1920, logo_scale=0.32)
-          splash.save(os.path.join(res, "drawable", "splash.png"))
-          splash.save(os.path.join(res, "drawable-port", "splash.png"))
+          splash_image(1080, 1920).save(os.path.join(res, "drawable", "splash.png"))
+          splash_image(1080, 1920).save(os.path.join(res, "drawable-port", "splash.png"))
           splash_image(1920, 1080, 0.28).save(os.path.join(res, "drawable-land", "splash.png"))
+          for folder, size in [("drawable-mdpi", (320, 480)), ("drawable-hdpi", (480, 800)), ("drawable-xhdpi", (720, 1280)), ("drawable-xxhdpi", (1080, 1920)), ("drawable-xxxhdpi", (1440, 2560))]:
+              splash_image(size[0], size[1]).save(os.path.join(res, folder, "splash.png"))
 
-          # Density variants
-          for folder, size in [
-              ("drawable-mdpi", (320, 480)),
-              ("drawable-hdpi", (480, 800)),
-              ("drawable-xhdpi", (720, 1280)),
-              ("drawable-xxhdpi", (1080, 1920)),
-              ("drawable-xxxhdpi", (1440, 2560)),
-          ]:
-              d = os.path.join(res, folder)
-              os.makedirs(d, exist_ok=True)
-              splash_image(size[0], size[1], 0.32).save(os.path.join(d, "splash.png"))
-
-          # Also replace any existing capacitor splash/splash.png named files
           for path in glob.glob(res + "/**/splash*.png", recursive=True):
               try:
-                  im = Image.open(path)
-                  w, h = im.size
-                  splash_image(max(w, 320), max(h, 480), 0.32).save(path)
+                  im = Image.open(path); w, h = im.size
+                  splash_image(max(w, 320), max(h, 480)).save(path)
               except Exception:
                   pass
 
-          # Force splash background color in styles if present
           for styles in glob.glob(res + "/**/styles.xml", recursive=True):
               try:
                   txt = open(styles).read()
-                  txt2 = txt.replace("#FFFFFF", "#0A0E1C").replace("#ffffff", "#0A0E1C").replace("#FFF", "#0A0E1C")
+                  txt2 = txt.replace("#FFFFFF", "#0A0E1C").replace("#ffffff", "#0A0E1C")
                   if txt2 != txt:
                       open(styles, "w").write(txt2)
-                      print("updated", styles)
               except Exception:
                   pass
-
-          print("icons + splash OK")
+          print("icons + splash + cleartext OK")
           PY
 
       - name: Build Debug APK
