@@ -1,1 +1,248 @@
-[]
+[
+  {
+    "id": "chat_3737479b-1b7f-40ae-ae8b-fef54b32fa91",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_34e1aa33-998b-41fa-b046-6c908f68cdb9",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T08:33:08.415Z"
+      },
+      {
+        "id": "msg_4898b6c5-a1f0-493d-b841-33035d64fdd4",
+        "role": "assistant",
+        "content": "Hi there! How can I help you today?",
+        "createdAt": "2026-09-02T08:33:09.570Z"
+      }
+    ],
+    "createdAt": "2026-09-02T08:33:08.398Z",
+    "updatedAt": "2026-09-02T08:33:09.570Z"
+  },
+  {
+    "id": "chat_b3a7e4c7-0340-48ad-9ded-821670fcefad",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_61185da1-7f2e-4224-b97c-1098aad7d8bc",
+        "role": "user",
+        "content": "আমার CynExtra-AI app-এর login থেকে chat পর্যন্ত flow analyse করো। প্রথমে সমস্যা identify করো, তারপর root cause বের করো, প্রয়োজনীয় files নির্ধারণ করো, minimal fix propose করো এবং শেষে কীভাবে test করব সেটা বলো।”",
+        "createdAt": "2026-09-02T08:53:29.561Z"
+      },
+      {
+        "id": "msg_7331ae69-32b0-4986-98ab-3a4c32f2468e",
+        "role": "assistant",
+        "content": "আপনার অ্যাপের login → chat পর্যন্ত প্রবাহের বিশ্লেষণ করতে হলে কয়েকটি মূল তথ্য দরকার। দয়া করে নিচের বিষয়গুলো পরিষ্কার করে জানালে আমি সঠিক সমস্যা চিহ্নিত করে root‑cause, প্রাসঙ্গিক ফাইল ও সমাধান, টেস্ট কৌশল ইত্যাদি নির্দিষ্টভাবে দিতে পারব:\n\n1. **প্রযুক্তি স্ট্যাক** – (React, Vue, Angular, Flutter, ইত্যাদি)  \n2. **অ্যাপের গঠন** – login, authentication (JWT / OAuth / সেশন), token‑storage, routing, chat‑component‑এর ফাইল/মডিউল নাম।  \n3. **বর্তমান সমস্যাটি** – উদাহরণস্বরূপ: login‑এর পর redirect হচ্ছে না, token পাওয়া যাচ্ছে না, chat‑এ সংযোগ ব্যর্থ হচ্ছে, ইত্যাদি।  \n4. **কোড বা লগের অংশ** – যদি সম্ভব হয়, login‑এর response, token‑এর সঞ্চয়স্থল, API‑কলের URL ও headers ইত্যাদি শেয়ার করুন।  \n\nএই তথ্যগুলো পেলে আমি নিম্নলিখিত ফরম্যাটে বিস্তারিত উত্তর দিতে পারি:\n\n| ধাপ | বিবরণ |\n|------|-------|\n| **Problem Identification** | কী ভুল হচ্ছে, কোন UI/UX আচরণ, ব্যাকএন্ড error |\n| **Root Cause Analysis** | টোকেন ম্যানেজমেন্ট, API‑কল, রাউটার, স্টেট আপডেট |\n| **Required Files** | login, auth service, token storage, chat component, api client, route guard |\n| **Minimal Fix** | কোড স্নিপেট, configuration পরিবর্তন, প্যাচ |\n| **Testing** | unit, integration, manual steps, test scripts |\n\nআপনার যদি ইতিমধ্যে কোনো লগ বা কোড স্নিপেট থাকে, অনুগ্রহ করে শেয়ার করুন—এতে বিশ্লেষণ আরও সুনির্দিষ্ট হবে। ধন্যবাদ!",
+        "createdAt": "2026-09-02T08:53:35.808Z"
+      }
+    ],
+    "createdAt": "2026-09-02T08:53:29.452Z",
+    "updatedAt": "2026-09-02T08:53:35.808Z"
+  },
+  {
+    "id": "chat_12076577-fb86-47ea-afeb-447f26d72925",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_29c4cdda-7762-4073-88b6-0d76cdf56fca",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T12:55:21.405Z"
+      }
+    ],
+    "createdAt": "2026-09-02T12:55:21.389Z",
+    "updatedAt": "2026-09-02T12:55:21.405Z"
+  },
+  {
+    "id": "chat_0fa682a1-abdc-4bc4-abee-43ce730043d1",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_d7c9aede-bcab-4bad-8774-3ae3e224d488",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:33:19.128Z"
+      },
+      {
+        "id": "msg_8cd09ac8-d396-47a7-9ef7-b0b6263061d7",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:33:22.322Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:33:19.102Z",
+    "updatedAt": "2026-09-02T13:33:22.322Z"
+  },
+  {
+    "id": "chat_0f025cbc-5071-4dee-a693-e17356802015",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_024d173e-e2ae-4445-b613-5a5e8c0b6687",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:33:30.253Z"
+      },
+      {
+        "id": "msg_d104026d-056d-4251-80d6-8a402b8f4ddc",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:33:31.838Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:33:30.181Z",
+    "updatedAt": "2026-09-02T13:33:31.838Z"
+  },
+  {
+    "id": "chat_08e1b3e8-a25c-49c8-a98e-f7ef601983f0",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_112e0db6-09da-4227-b769-881108728c0a",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:33:44.907Z"
+      },
+      {
+        "id": "msg_e74488ce-1e8b-41c8-97a1-109ade18e8cb",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:33:46.295Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:33:44.759Z",
+    "updatedAt": "2026-09-02T13:33:46.295Z"
+  },
+  {
+    "id": "chat_1caf641f-25cb-4365-a1ab-3c8305757c5c",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_730713d0-a709-4259-84c0-4fe963d634de",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:34:07.628Z"
+      },
+      {
+        "id": "msg_962244a7-ddb3-491a-8b90-76bf33440b98",
+        "role": "assistant",
+        "content": "Hello! How can I assist you today?",
+        "createdAt": "2026-09-02T13:34:08.902Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:34:07.588Z",
+    "updatedAt": "2026-09-02T13:34:08.902Z"
+  },
+  {
+    "id": "chat_e6977496-b666-4e66-98b1-ae6a74c02edc",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_8e640776-bde9-48f6-ba6d-4c0312f3f383",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:34:16.659Z"
+      },
+      {
+        "id": "msg_da5eaa11-4e60-4d41-8fe8-2bd996c12c50",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:34:17.593Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:34:16.430Z",
+    "updatedAt": "2026-09-02T13:34:17.593Z"
+  },
+  {
+    "id": "chat_1c81cbf6-1aab-4887-88dc-6153ac8d0c58",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_353d3a26-0610-4d7e-ab55-1339117c6c90",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:34:34.124Z"
+      },
+      {
+        "id": "msg_ac220568-a962-4fe4-acef-bb89c11fe52e",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:34:35.103Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:34:34.068Z",
+    "updatedAt": "2026-09-02T13:34:35.103Z"
+  },
+  {
+    "id": "chat_4f187c40-66b0-40db-99a2-fbb7b3dca361",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_ef62b106-0524-446e-8d83-351ac8c524ff",
+        "role": "user",
+        "content": "..,",
+        "createdAt": "2026-09-02T13:34:46.240Z"
+      },
+      {
+        "id": "msg_0edb630c-4015-4b85-8477-0ace8893848a",
+        "role": "assistant",
+        "content": "It looks like your message might be incomplete. Could you let me know what you’d like help with?",
+        "createdAt": "2026-09-02T13:34:47.497Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:34:46.144Z",
+    "updatedAt": "2026-09-02T13:34:47.497Z"
+  },
+  {
+    "id": "chat_4269518b-e481-47ac-be84-e4cd8fc000c4",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_48dc1161-b74e-48af-9cb6-7f3ce2589556",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:35:23.561Z"
+      },
+      {
+        "id": "msg_83d0a58a-2357-4f0b-966a-c665c573d22e",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:35:25.125Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:35:23.538Z",
+    "updatedAt": "2026-09-02T13:35:25.125Z"
+  },
+  {
+    "id": "chat_00423d76-7559-4a79-871a-2a483b830ebb",
+    "userId": "user_c41d7632c07fa3f2d274404a",
+    "title": "New conversation",
+    "messages": [
+      {
+        "id": "msg_bd831054-3b0c-4bab-8e55-b9c191cc707a",
+        "role": "user",
+        "content": "Hello",
+        "createdAt": "2026-09-02T13:35:29.334Z"
+      },
+      {
+        "id": "msg_6647d22f-4c2d-4b9f-bd9e-19a9cd0c7afc",
+        "role": "assistant",
+        "content": "Hello! How can I help you today?",
+        "createdAt": "2026-09-02T13:35:30.506Z"
+      }
+    ],
+    "createdAt": "2026-09-02T13:35:29.153Z",
+    "updatedAt": "2026-09-02T13:35:30.506Z"
+  }
+]

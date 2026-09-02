@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "user_c41d7632c07fa3f2d274404a",
+    "plan": "free",
+    "metadata": {
+      "name": "tahmid hasan",
+      "email": "tahmidhasan1717@gmail.com",
+      "passwordHash": "scrypt$aba336424267d40936ea5bc7821c9441$30d304da025db9da38e8ae6816f70da0eb8f195ce5129d2401c827357e197ab4565c5edf4d1e28b79a27cd5a26586b1794fa617df4530501176e466bb52c32bb",
+      "learning": {
+        "preferences": {
+          "detected_language": "bn"
+        },
+        "updatedAt": "2026-09-02T08:53:36.106Z"
+      }
+    },
+    "createdAt": "2026-09-02T03:57:05.329Z",
+    "updatedAt": "2026-09-02T08:53:36.181Z"
+  },
+  {
+    "id": "user_184c62fb46e59a457f25c6cb",
+    "plan": "free",
+    "metadata": {
+      "name": "Test User",
+      "email": "test@example.com",
+      "passwordHash": "scrypt$1c1322e0486c7c71b580ca4e9629cb2a$05b6105763ea526cefdfc809719a0e895e3b3b970d5b186f48879933c14e2fcea6f3fdef5b9e1f1f5e5cc247170f86551c1c67aac768a7ef752d33cf09d9f006"
+    },
+    "createdAt": "2026-09-02T07:51:18.409Z",
+    "updatedAt": "2026-09-02T07:51:18.409Z"
+  }
+]
